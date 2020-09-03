@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class DoubleDraugr
+    public class DoubleDraugr
     {
         /// <summary>
         /// Gets the price of the burger.
