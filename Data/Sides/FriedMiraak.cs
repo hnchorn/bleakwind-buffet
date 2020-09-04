@@ -12,6 +12,9 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// Class to represent the Fried Miraak side.
+    /// </summary>
     public class FriedMiraak
     {
         /// <summary>
@@ -32,7 +35,7 @@ namespace BleakwindBuffet.Data.Sides
 
         /// <summary>
         /// Gets the price of the pancakes depending on its size. 
-        /// Throws an exception if a size other than small, medium, or large is specified.  
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
         public double Price
         {
@@ -48,7 +51,7 @@ namespace BleakwindBuffet.Data.Sides
 
         /// <summary>
         /// Gets the calories of the pancakes depending on its size.
-        /// Throws an exception if a size other than small, medium, or large is specified.
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
         public uint Calories
         {

@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Philly Poacher cheesesteak sandwich.
+    /// </summary>
     public class PhillyPoacher
     {
         /// <summary>

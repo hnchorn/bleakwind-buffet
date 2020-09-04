@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Double Draugr burger.
+    /// </summary>
     public class DoubleDraugr
     {
         /// <summary>

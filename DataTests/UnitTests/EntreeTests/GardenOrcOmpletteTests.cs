@@ -6,72 +6,124 @@
 using Xunit;
 
 using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
+    /// <summary>
+    /// Unit tests for the Garden Orc Omelette.
+    /// </summary>
     public class GardenOrcOmeletteTests
     {
         [Fact]
-        public void ShouldInlcudeBroccoliByDefault()
+        public void ShouldIncludeBroccoliByDefault()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.True(goo.Broccoli);
         }
 
         [Fact]
-        public void ShouldInlcudeMushroomsByDefault()
+        public void ShouldIncludeMushroomsByDefault()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.True(goo.Mushrooms);
         }
 
         [Fact]
-        public void ShouldInlcudeTomatoByDefault()
+        public void ShouldIncludeTomatoByDefault()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.True(goo.Mushrooms);
         }
 
         [Fact]
-        public void ShouldInlcudeCheddarByDefault()
+        public void ShouldIncludeCheddarByDefault()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.True(goo.Cheddar);
         }
 
         [Fact]
         public void ShouldBeAbleToSetBroccoli()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            goo.Broccoli = false;
+            Assert.False(goo.Broccoli);
+            goo.Broccoli = true;
+            Assert.True(goo.Broccoli);
         }
 
         [Fact]
         public void ShouldBeAbleToSetMushrooms()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            goo.Mushrooms = false;
+            Assert.False(goo.Mushrooms);
+            goo.Mushrooms = true;
+            Assert.True(goo.Mushrooms);
         }
 
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            goo.Tomato = false;
+            Assert.False(goo.Tomato);
+            goo.Tomato = true;
+            Assert.True(goo.Tomato);
         }
 
         [Fact]
         public void ShouldBeAbleToSetCheddar()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            goo.Cheddar = false;
+            Assert.False(goo.Cheddar);
+            goo.Cheddar = true;
+            Assert.True(goo.Cheddar);
         }
 
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.Equal(4.57, goo.Price);
         }
 
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.Equal((uint)404, goo.Calories);
         }
 
         [Theory]
         [InlineData(true, true, true, true)]
+        [InlineData(false, true, true, true)]
+        [InlineData(true, false, true, true)]
+        [InlineData(true, true, false, true)]
+        [InlineData(true, true, true, false)]
         [InlineData(false, false, false, false)]
         public void ShouldReturnCorrectSpecialInstructions(bool includeBroccoli, bool includeMushrooms,
                                                             bool includeTomato, bool includeCheddar)
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            goo.Broccoli = includeBroccoli;
+            goo.Mushrooms = includeMushrooms;
+            goo.Tomato = includeTomato;
+            goo.Cheddar = includeCheddar;
+            if (!includeBroccoli) Assert.Contains("Hold broccoli", goo.SpecialInstructions);
+            else if (!includeMushrooms) Assert.Contains("Hold mushrooms", goo.SpecialInstructions);
+            else if (!includeTomato) Assert.Contains("Hold tomato", goo.SpecialInstructions);
+            else if (!includeCheddar) Assert.Contains("Hold cheddar", goo.SpecialInstructions);
+            else Assert.Empty(goo.SpecialInstructions);
         }
 
         [Fact]
         public void ShouldReturnCorrectToString()
         {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.Equal("Garden Orc Omelette", goo.ToString());
         }
     }
 }

@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class to represent Thugs T-Bone.
+    /// </summary>
     public class ThugsTBone
     {
         /// <summary>
@@ -37,7 +40,7 @@ namespace BleakwindBuffet.Data.Entrees
 
         /// <summary>
         /// Creates an empty list of special instructions since
-        /// this class has no boolean properties to remove.
+        /// this class has no boolean properties.
         /// </summary>
         public List<string> SpecialInstructions
         {

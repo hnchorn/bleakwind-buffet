@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Smokehouse Skeleton breakfast combo.
+    /// </summary>
     public class SmokehouseSkeleton
     {
         /// <summary>
@@ -53,7 +56,7 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
-        /// Gets if the combo will or will not have egg.
+        /// Gets if the combo will or will not have eggs.
         /// </summary>
         private bool egg = true;
         public bool Egg
@@ -87,7 +90,7 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
-        /// Gets if the combo will or will not have pancake.
+        /// Gets if the combo will or will not have pancakes.
         /// </summary>
         private bool pancake = true;
         public bool Pancake

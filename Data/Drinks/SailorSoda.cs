@@ -12,6 +12,9 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the Sailor Soda drink.
+    /// </summary>
     public class SailorSoda
     {
         /// <summary>
@@ -32,7 +35,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         /// <summary>
         /// Gets the price of the soda depending on its size. 
-        /// Throws an exception if a size other than small, medium, or large is specified.  
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
         public double Price
         {
@@ -48,7 +51,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         /// <summary>
         /// Gets the calories of the soda depending on its size.
-        /// Throws an exception if a size other than small, medium, or large is specified.
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>
         /// </summary>
         public uint Calories
         {

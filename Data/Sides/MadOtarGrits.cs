@@ -12,6 +12,9 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// Class representing the Mad Otar Grits side.
+    /// </summary>
     public class MadOtarGrits
     {
         /// <summary>
@@ -32,7 +35,7 @@ namespace BleakwindBuffet.Data.Sides
 
         /// <summary>
         /// Gets the price of the grits depending on its size. 
-        /// Throws an exception if a size other than small, medium, or large is specified.  
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
         public double Price
         {
@@ -48,7 +51,7 @@ namespace BleakwindBuffet.Data.Sides
 
         /// <summary>
         /// Gets the calories of the grits depending on its size.
-        /// Throws an exception if a size other than small, medium, or large is specified.
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
         public uint Calories
         {

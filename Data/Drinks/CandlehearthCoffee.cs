@@ -12,6 +12,9 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the Candlehearth Coffee drink.
+    /// </summary>
     public class CandlehearthCoffee
     {
         /// <summary>
@@ -32,7 +35,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         /// <summary>
         /// Gets the price of the coffee depending on its size. 
-        /// Throws an exception if a size other than small, medium, or large is specified.  
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
         public double Price
         {
@@ -48,7 +51,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         /// <summary>
         /// Gets the calories of the coffee depending on its size.
-        /// Throws an exception if a size other than small, medium, or large is specified.
+        /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
         public uint Calories
         {
@@ -134,8 +137,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// "[Size] Decaf Candleheart Coffee" </returns>
         public override string ToString()
         {
-            if (decaf) return size + " Decaf Candleheart Coffee";
-            else return size + " Candleheart Coffee";
+            if (decaf) return size + " Decaf Candlehearth Coffee";
+            else return size + " Candlehearth Coffee";
         }
     }
 }

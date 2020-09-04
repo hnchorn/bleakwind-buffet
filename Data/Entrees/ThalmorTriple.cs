@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Thalmor Triple burger.
+    /// </summary>
     public class ThalmorTriple
     {
         /// <summary>
