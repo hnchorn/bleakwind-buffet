@@ -15,29 +15,13 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Candlehearth Coffee drink.
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
-        /// <summary>
-        /// Gets the size of the coffee.
-        /// </summary>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the coffee depending on its size. 
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets the calories of the coffee depending on its size.
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -64,10 +48,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private bool ice = false;
         /// <summary>
         /// Gets if the coffee will or will not have ice.
         /// </summary>
-        private bool ice = false;
         public bool Ice
         {
             get
@@ -81,10 +66,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private bool roomForCream = false;
         /// <summary>
         /// Gets if the coffee will or will not have room for cream.
         /// </summary>
-        private bool roomForCream = false;
         public bool RoomForCream
         {
             get
@@ -98,10 +84,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private bool decaf = false;
         /// <summary>
         /// Gets if the coffee will or will not be decaf.
         /// </summary>
-        private bool decaf = false;
         public bool Decaf
         {
             get
@@ -119,7 +106,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Creates a special instruction list if the customer
         /// wants ice or cream. Otherwise returns an empty list.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -15,29 +15,13 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing the Mad Otar Grits side.
     /// </summary>
-    public class MadOtarGrits
+    public class MadOtarGrits : Side
     {
-        /// <summary>
-        /// Gets the size of the grits.
-        /// </summary>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the grits depending on its size. 
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +37,7 @@ namespace BleakwindBuffet.Data.Sides
         /// Gets the calories of the grits depending on its size.
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -61,19 +45,6 @@ namespace BleakwindBuffet.Data.Sides
                 if (size == Size.Medium) return 142;
                 if (size == Size.Large) return 179;
                 throw new NotImplementedException();
-            }
-        }
-
-        /// <summary>
-        /// Creates and returns a new list since there are no 
-        /// special instructions.
-        /// </summary>
-        public List<string> SpecialInstructions
-        {
-            get
-            {
-                List<string> instructions = new List<string>();
-                return instructions;
             }
         }
 

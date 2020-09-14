@@ -14,12 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class representing the Smokehouse Skeleton breakfast combo.
     /// </summary>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// Gets the price of the combo.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -30,7 +30,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories of the combo.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -38,10 +38,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool sausageLink = true;
         /// <summary>
         /// Gets if the combo will or will not have a sausage link.
         /// </summary>
-        private bool sausageLink = true;
         public bool SausageLink
         {
             get
@@ -55,10 +56,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool egg = true;
         /// <summary>
         /// Gets if the combo will or will not have eggs.
         /// </summary>
-        private bool egg = true;
         public bool Egg
         {
             get
@@ -72,10 +74,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool hashBrowns = true;
         /// <summary>
         /// Gets if the combo will or will not have hashbrowns.
         /// </summary>
-        private bool hashBrowns = true;
         public bool HashBrowns
         {
             get
@@ -89,10 +92,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
+        private bool pancake = true;
         /// <summary>
         /// Gets if the combo will or will not have pancakes.
         /// </summary>
-        private bool pancake = true;
         public bool Pancake
         {
             get
@@ -110,7 +114,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Creates a list of special instructions depending on how the
         /// customer orders their combo.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -15,28 +15,12 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Warrior Water drink.
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
-        /// <summary>
-        /// Gets the size of the water.
-        /// </summary>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the water ($0.00 for all sizes).  
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -48,7 +32,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the water (0 for all sizes).
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -56,10 +40,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool ice = true;
         /// <summary>
         /// Gets if the water will or will not have ice.
         /// </summary>
-        private bool ice = true;
         public bool Ice
         {
             get
@@ -73,10 +57,10 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool lemon = false;
         /// <summary>
         /// Gets if the water will or will not have lemon.
         /// </summary>
-        private bool lemon = false;
         public bool Lemon
         {
             get
@@ -94,7 +78,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Creates a special instruction list if the customer
         /// wants lemon or doesn't want ice. Otherwise returns an empty list.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

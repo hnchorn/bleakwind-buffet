@@ -15,29 +15,13 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Sailor Soda drink.
     /// </summary>
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
-        /// <summary>
-        /// Gets the size of the soda.
-        /// </summary>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the soda depending on its size. 
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets the calories of the soda depending on its size.
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -64,10 +48,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private bool ice = true;
         /// <summary>
         /// Gets if the soda will or will not have ice.
         /// </summary>
-        private bool ice = true;
         public bool Ice
         {
             get
@@ -81,10 +66,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private SodaFlavor flavor = SodaFlavor.Cherry;
         /// <summary>
         /// Gets the flavor of the soda.
         /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
             get
@@ -101,7 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Creates a special instruction list if the customer does
         /// not want ice. Otherwise returns an empty list.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

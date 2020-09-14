@@ -14,12 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class representing the Philly Poacher cheesesteak sandwich.
     /// </summary>
-    public class PhillyPoacher
+    public class PhillyPoacher : Entree
     {
         /// <summary>
         /// Gets the price of the sandwich.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -30,7 +30,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories of the sandwich.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -38,10 +38,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool sirloin = true;
         /// <summary>
         /// Gets if sirloin will or will not be on the sandwich.
         /// </summary>
-        private bool sirloin = true;
         public bool Sirloin
         {
             get
@@ -55,10 +55,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool onion = true;
         /// <summary>
         /// Gets if onion will or will not be on the sandwich.
         /// </summary>
-        private bool onion = true;
         public bool Onion
         {
             get
@@ -71,11 +71,11 @@ namespace BleakwindBuffet.Data.Entrees
                 onion = value;
             }
         }
-
+        
+        private bool roll = true;
         /// <summary>
         /// Gets if the sandwich will or will not be on a roll.
         /// </summary>
-        private bool roll = true;
         public bool Roll
         {
             get
@@ -93,7 +93,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Creates a list of special instructions depending on how the
         /// customer orders their sandwich.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -14,12 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class to represent Thugs T-Bone.
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {
         /// <summary>
         /// Gets the price of the t-bone.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -30,7 +30,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories of the t-bone.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -42,7 +42,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Creates an empty list of special instructions since
         /// this class has no boolean properties.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

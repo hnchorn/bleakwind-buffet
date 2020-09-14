@@ -14,12 +14,12 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class representing the Briarheart Burger.
     /// </summary>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree
     {
         /// <summary>
         /// Gets the price of the burger.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get 
             { 
@@ -30,7 +30,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories of the burger.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -38,10 +38,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool bun = true;
         /// <summary>
         /// Gets if the burger will or will not have a bun.
         /// </summary>
-        private bool bun = true;
         public bool Bun
         {
             get
@@ -55,10 +55,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool ketchup = true;
         /// <summary>
         /// Gets if ketchup will or will not be on the burger.
         /// </summary>
-        private bool ketchup = true;
         public bool Ketchup
         {
             get
@@ -72,10 +72,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool mustard = true;
         /// <summary>
         /// Gets if mustard will or will not be on the burger.
         /// </summary>
-        private bool mustard = true;
         public bool Mustard
         {
             get
@@ -89,10 +89,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool pickle = true;
         /// <summary>
         /// Gets if a pickle will or will not be on the burger.
         /// </summary>
-        private bool pickle = true;
         public bool Pickle
         {
             get
@@ -106,10 +106,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+        private bool cheese = true;
         /// <summary>
         /// Gets if cheese will or will not be on the burger. 
         /// </summary>
-        private bool cheese = true;
         public bool Cheese
         {
             get
@@ -127,7 +127,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Creates a list of special instructions depending on how the
         /// customer orders their burger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

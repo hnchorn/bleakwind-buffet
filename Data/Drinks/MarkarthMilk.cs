@@ -15,29 +15,13 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Markarth Milk drink.
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
-        /// <summary>
-        /// Gets the size of the milk.
-        /// </summary>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the milk depending on its size. 
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception>  
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -53,7 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets the calories of the milk depending on its size.
         /// <exception cref="NotImplementedException"> Thrown if a size other than small, medium, or large is specified. </exception> 
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -64,10 +48,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+
+        private bool ice = false;
         /// <summary>
         /// Gets if the milk will or will not have ice.
         /// </summary>
-        private bool ice = false;
         public bool Ice
         {
             get
@@ -85,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Creates a special instruction list if the customer
         /// wants ice. Otherwise returns an empty list.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
