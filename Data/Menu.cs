@@ -20,6 +20,10 @@ namespace BleakwindBuffet.Data
     /// </summary>
     public static class Menu
     {
+        /// <summary>
+        /// Creates a list of all entrees on the menu.
+        /// </summary>
+        /// <returns>A list containing all entrees on the menu.</returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -42,6 +46,10 @@ namespace BleakwindBuffet.Data
             return list;
         }
 
+        /// <summary>
+        /// Creates a list of all sides on the menu.
+        /// </summary>
+        /// <returns>A list containing all sides on the menu.</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -68,6 +76,10 @@ namespace BleakwindBuffet.Data
             return list;
         }
 
+        /// <summary>
+        /// Creates a list of all drinks on the menu.
+        /// </summary>
+        /// <returns>A list containing all drinks on the menu.</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> list = new List<IOrderItem>();
@@ -102,6 +114,10 @@ namespace BleakwindBuffet.Data
             return list;
         }
 
+        /// <summary>
+        /// Creates a list of all items on the menu.
+        /// </summary>
+        /// <returns>A list containing all items on the menu.</returns>
         public static IEnumerable<IOrderItem> FullMenu()
         {
             List<IOrderItem> list = new List<IOrderItem>();
