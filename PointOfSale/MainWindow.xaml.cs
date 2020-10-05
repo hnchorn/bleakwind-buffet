@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: MainWindow.xaml.cs
+ * Purpose: Class used to represent the Main Window of the GUI interface.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +49,10 @@ namespace PointOfSale
         SSodaCustomization ssodaCustom;
         WWaterCustomization wwCustom;
 
+        /// <summary>
+        /// Initalizes MainWindow an decalres variables for each
+        /// of the screens.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -72,6 +82,12 @@ namespace PointOfSale
             screen.Child = menuSelect;
         }
 
+        /// <summary>
+        /// Switches the menu selection screen out for the
+        /// item customization screen, depending on the item 
+        /// chosen from the menu.
+        /// </summary>
+        /// <param name="name">Variable representing the screen.</param>
         public void SwitchScreen(string name)
         {
             switch (name)

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: TotalSummary.xaml.cs
+ * Purpose: Class used to represent the total summary for
+ * a customer's order on the GUI interface.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class TotalSummary : UserControl
     {
+        /// <summary>
+        /// Initializes Total Summary screen
+        /// </summary>
         public TotalSummary()
         {
             InitializeComponent();

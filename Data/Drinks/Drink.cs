@@ -8,6 +8,7 @@
 using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -15,8 +16,9 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A base class representing the common properties of drinks.
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         protected Size size = Size.Small;
         /// <summary>
@@ -31,6 +33,9 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                NotifyPropertyChanged("Size");
+                NotifyPropertyChanged("Price");
+                NotifyPropertyChanged("Calories");
             }
         }
 
@@ -51,5 +56,17 @@ namespace BleakwindBuffet.Data.Drinks
         /// Special instructions to prepare the drink.
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+        
+        /// <summary>
+        /// Notifies a property if the button representing it changes.
+        /// </summary>
+        /// <param name="propertyName">Name of the property changing.</param>
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

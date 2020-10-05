@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: OrderSummary.xaml.cs
+ * Purpose: Class used to represent the customer's order
+ * summery on the GUI interface.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderSummary : UserControl
     {
+        /// <summary>
+        /// Initalizes the Order Summary screen.
+        /// </summary>
         public OrderSummary()
         {
             InitializeComponent();

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: MenuSelect.xaml.cs
+ * Purpose: Class used to represent the Menu Selection on the 
+ * GUI interface.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +27,11 @@ namespace PointOfSale
     {
         MainWindow mainWindow;
 
+        /// <summary>
+        /// Initalizes the menu selection screen and 
+        /// sets its parent as the Main Window Screen.
+        /// </summary>
+        /// <param name="mainWindow">Parent screen.</param>
         public MenuSelect(MainWindow mainWindow)
         {
             InitializeComponent();

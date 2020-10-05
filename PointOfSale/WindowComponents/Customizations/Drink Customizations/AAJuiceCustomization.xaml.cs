@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Drinks;
 
 namespace PointOfSale
 {
@@ -20,10 +21,16 @@ namespace PointOfSale
     {
         MainWindow mainWindow;
 
+        /// <summary>
+        /// Initalizes the screen and sets its 
+        /// parent as the Main Window Screen.
+        /// </summary>
+        /// <param name="mainWindow">Parent screen.</param>
         public AAJuiceCustomization(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            this.DataContext = new AretinoAppleJuice();
         }
 
         void DoneClickHandle(object sender, EventArgs e)

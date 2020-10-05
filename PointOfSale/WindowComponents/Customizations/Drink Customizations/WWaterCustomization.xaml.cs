@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: WWaterCustomization.xaml.cs
+ * Purpose: Class used to represent the Warrior Water
+ * customization screen on the GUI interface.
+ */
+
+using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,10 +28,16 @@ namespace PointOfSale
     {
         MainWindow mainWindow;
 
+        /// <summary>
+        /// Initalizes the screen and sets its 
+        /// parent as the Main Window Screen.
+        /// </summary>
+        /// <param name="mainWindow">Parent screen.</param>
         public WWaterCustomization(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            this.DataContext = new WarriorWater();
         }
 
         void DoneClickHandle(object sender, EventArgs e)

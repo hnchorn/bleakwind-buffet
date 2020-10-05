@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using NuGet.Frameworks;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -29,6 +30,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             AretinoAppleJuice aaj = new AretinoAppleJuice();
             Assert.IsAssignableFrom<IOrderItem>(aaj);
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToINotifyPropertyChanged()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aaj);
         }
 
         [Fact]
@@ -110,6 +118,74 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             AretinoAppleJuice aaj = new AretinoAppleJuice();
             aaj.Size = size;
             Assert.Equal(name, aaj.ToString());
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aaj, "Size", () =>
+            {
+                aaj.Size = Size.Small;
+            });
+            Assert.PropertyChanged(aaj, "Size", () =>
+            {
+                aaj.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(aaj, "Size", () =>
+            {
+                aaj.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aaj, "Price", () =>
+            {
+                aaj.Size = Size.Small;
+            });
+            Assert.PropertyChanged(aaj, "Price", () =>
+            {
+                aaj.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(aaj, "Price", () =>
+            {
+                aaj.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aaj, "Calories", () =>
+            {
+                aaj.Size = Size.Small;
+            });
+            Assert.PropertyChanged(aaj, "Calories", () =>
+            {
+                aaj.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(aaj, "Calories", () =>
+            {
+                aaj.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Assert.PropertyChanged(aaj, "Ice", () =>
+            {
+                aaj.Ice = true;
+            });
+            Assert.PropertyChanged(aaj, "Ice", () =>
+            {
+                aaj.Ice = false;
+            });
         }
     }
 }

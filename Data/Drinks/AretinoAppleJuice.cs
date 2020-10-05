@@ -63,6 +63,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
+                NotifyPropertyChanged("Ice");
             }
         }
 

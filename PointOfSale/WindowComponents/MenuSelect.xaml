@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="410" d:DesignWidth="550">
+             d:DesignHeight="800" d:DesignWidth="1500">
     <DockPanel>
         <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="0,4,0,10">
             <Grid>
@@ -16,8 +16,9 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -27,100 +28,100 @@
                 </Grid.RowDefinitions>
 
                 <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.ColumnSpan="3">
-                    <TextBlock DockPanel.Dock="Top" Grid.ColumnSpan ="3" FontWeight="Bold" FontSize="15" TextAlignment="Center">
+                    <TextBlock DockPanel.Dock="Top" Grid.ColumnSpan ="3" FontWeight="Bold" FontSize="20" TextAlignment="Center">
                         Add to Order:
                     </TextBlock>
                 </Border>
     
-                <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="0,2,0,0">
+                <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Padding="0,2,0,0">
                     ENTREES:
                 </TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="0,2,0,0">
+                <TextBlock Grid.Row="1" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Padding="0,2,0,0">
                     SIDES:
                 </TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="10" FontWeight="Bold" Padding="0,2,0,0">
+                <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Padding="0,2,0,0">
                     DRINKS:
                 </TextBlock>
 
                 <Border Grid.Column="0" Grid.Row="2" Padding ="10,5" CornerRadius="10">
-                    <Button Click="BbClickHandle" Grid.Row="2" Name="briarheartBurgerButton">
+                    <Button Click="BbClickHandle" Grid.Row="2" Name="briarheartBurgerButton" FontSize="30">
                         Briarheart Burger
                     </Button>
                 </Border>
                 <Border Grid.Column ="0" Grid.Row="3" Padding="10,5" CornerRadius="10">
-                    <Button Click="DdClickHandle" Grid.Row="2" Name="doubleDraugrButton">
+                    <Button Click="DdClickHandle" Grid.Row="2" Name="doubleDraugrButton" FontSize="30">
                         Double Draugr
                     </Button>
                 </Border>
                 <Border Grid.Column="0" Grid.Row="4" Padding="10,5" CornerRadius="10">
-                    <Button Click="TtClickHandle" Grid.Row="2" Name="thalmorTripleButton">
+                    <Button Click="TtClickHandle" Grid.Row="2" Name="thalmorTripleButton" FontSize="30">
                         Thalmor Triple
                     </Button>
                 </Border>
                 <Border Grid.Column="0" Grid.Row="5" Padding="10,5" CornerRadius="10">
-                    <Button Click="GooClickHandle" Grid.Row="2" Name="gardenOrcOmeletteButton">
+                    <Button Click="GooClickHandle" Grid.Row="2" Name="gardenOrcOmeletteButton" FontSize="30">
                         Garden Orc Omelette
                     </Button>
                 </Border>
                 <Border Grid.Column="0" Grid.Row="6" Padding="10,5" CornerRadius="10">
-                    <Button Click ="PpClickHandle" Grid.Row="2" Name="phillyPoacherButton">
+                    <Button Click ="PpClickHandle" Grid.Row="2" Name="phillyPoacherButton" FontSize="30">
                         Philly Poacher
                     </Button>
                 </Border>
                 <Border Grid.Column="0" Grid.Row="7" Padding="10,5" CornerRadius="10">
-                    <Button Click="SsClickHandle" Grid.Row="2" Name="smokehouseSkeletonButton">
+                    <Button Click="SsClickHandle" Grid.Row="2" Name="smokehouseSkeletonButton" FontSize="30">
                         Smokehouse Skeleton
                     </Button>
                 </Border>
                 <Border Grid.Column="0" Grid.Row="8" Padding="10,5" CornerRadius="10">
-                    <Button Click="TtbClickHandle" Grid.Row="2" Name="thugsTBoneButton">
-                        ThugsTBone
+                    <Button Click="TtbClickHandle" Grid.Row="2" Name="thugsTBoneButton" FontSize="30">
+                        Thugs T-Bone
                     </Button>
                 </Border>
 
                 <Border Grid.Column="1" Grid.Row="2" Padding="10,5" CornerRadius="10">
-                    <Button Click="DbwfClickHandle" Grid.Row="2" Name="dragonbornWaffleFriesButton">
+                    <Button Click="DbwfClickHandle" Grid.Row="2" Name="dragonbornWaffleFriesButton" FontSize="30">
                         Dragonborn Waffle Fries
                     </Button>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="3" Padding="10,5" CornerRadius="10">
-                    <Button Click="FmClickHandle" Grid.Row="2" Name="friedMiraakButton">
+                    <Button Click="FmClickHandle" Grid.Row="2" Name="friedMiraakButton" FontSize="30">
                         Fried Miraak
                     </Button>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="4" Padding="10,5" CornerRadius="10">
-                    <Button Click="MogClickHandle" Grid.Row="2" Name="madOtarGritsButton">
+                    <Button Click="MogClickHandle" Grid.Row="2" Name="madOtarGritsButton" FontSize="30">
                         Mad Otar Grits
                     </Button>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="5" Padding="10,5" CornerRadius="10">
-                    <Button Click="VsClickHandle" Grid.Row="2" Name="vokunSaladButton">
+                    <Button Click="VsClickHandle" Grid.Row="2" Name="vokunSaladButton" FontSize="30">
                         Vokun Salad
                     </Button>
                 </Border>
 
                 <Border Grid.Column="2" Grid.Row="2" Padding="10,5" CornerRadius="10">
-                    <Button Click="AajClickHandle" Grid.Row="2" Name="aajButton">
+                    <Button Click="AajClickHandle" Grid.Row="2" Name="aajButton" FontSize="30">
                         Aretino Apple Juice
                     </Button>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="3" Padding="10,5" CornerRadius="10">
-                    <Button Click="CcClickHandle" Grid.Row="2" Name="ccButton">
+                    <Button Click="CcClickHandle" Grid.Row="2" Name="ccButton" FontSize="30">
                         Candlehearth Coffee
                     </Button>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="4" Padding="10,5" CornerRadius="10">
-                    <Button Click="MmClickHandle" Grid.Row="2" Name="mmButton">
+                    <Button Click="MmClickHandle" Grid.Row="2" Name="mmButton" FontSize="30">
                         Markarth Milk
                     </Button>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="5" Padding="10,5" CornerRadius="10">
-                    <Button Click="SsodaClickHandle" Grid.Row="2" Name="ssButton">
+                    <Button Click="SsodaClickHandle" Grid.Row="2" Name="ssButton" FontSize="30">
                         Sailor Soda
                     </Button>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="6" Padding="10,5" CornerRadius="10">
-                    <Button Click="WwClickHandle" Grid.Row="2" Name="wwButton">
+                    <Button Click="WwClickHandle" Grid.Row="2" Name="wwButton" FontSize="30">
                         Warrior Water
                     </Button>
                 </Border>

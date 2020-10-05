@@ -8,6 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -28,6 +29,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         {
             FriedMiraak fm = new FriedMiraak();
             Assert.IsAssignableFrom<IOrderItem>(fm);
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToINotifyPropertyChanged()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fm);
         }
 
         [Fact]
@@ -87,6 +95,60 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             FriedMiraak fm = new FriedMiraak();
             fm.Size = size;
             Assert.Equal(name, fm.ToString());
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Size", () =>
+            {
+                fm.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fm, "Size", () =>
+            {
+                fm.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fm, "Size", () =>
+            {
+                fm.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Price", () =>
+            {
+                fm.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fm, "Price", () =>
+            {
+                fm.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fm, "Price", () =>
+            {
+                fm.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.PropertyChanged(fm, "Calories", () =>
+            {
+                fm.Size = Size.Small;
+            });
+            Assert.PropertyChanged(fm, "Calories", () =>
+            {
+                fm.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(fm, "Calories", () =>
+            {
+                fm.Size = Size.Large;
+            });
         }
     }
 }

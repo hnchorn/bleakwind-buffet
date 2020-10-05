@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: App.xaml.cs
+ * Purpose: Computer-generated class to ruin GUI interface.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
