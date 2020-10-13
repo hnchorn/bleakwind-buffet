@@ -4,6 +4,8 @@
  * Purpose: Class used to represent the Main Window of the GUI interface.
  */
 
+using BleakwindBuffet.Data;
+using BleakwindBuffet.Data.Entrees;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +28,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+
         MenuSelect menuSelect;
+        OrderSummary orderSummary;
 
         //Entrees
         BBurgerCustomization bbCustom;
@@ -56,7 +60,10 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new Order();
+
             menuSelect = new MenuSelect(this);
+            orderSummary = new OrderSummary(this);
 
             //Entrees
             bbCustom = new BBurgerCustomization(this);
@@ -80,7 +87,9 @@ namespace PointOfSale
             wwCustom = new WWaterCustomization(this);
 
             screen.Child = menuSelect;
+            orderScreen.Child = orderSummary;
         }
+
 
         /// <summary>
         /// Switches the menu selection screen out for the
@@ -88,65 +97,67 @@ namespace PointOfSale
         /// chosen from the menu.
         /// </summary>
         /// <param name="name">Variable representing the screen.</param>
-        public void SwitchScreen(string name)
+        public FrameworkElement SwitchScreen(string name)
         {
             switch (name)
             {
                 //Default menu screen
                 case "menuSelect":
                     screen.Child = menuSelect;
-                    break;
+                    return menuSelect;
 
                 //Entree customization screens
                 case "bbCustom":
                     screen.Child = bbCustom;
-                    break;
+                    return bbCustom;
                 case "ddCustom":
                     screen.Child = ddCustom;
-                    break;
+                    return ddCustom;
                 case "ttCustom":
                     screen.Child = ttCustom;
-                    break;
+                    return ttCustom;
                 case "gooCustom":
                     screen.Child = gooCustom;
-                    break;
+                    return gooCustom;
                 case "ppCustom":
                     screen.Child = ppCustom;
-                    break;
+                    return ppCustom;
                 case "ssCustom":
                     screen.Child = ssCustom;
-                    break;
+                    return ssCustom;
 
                 //Side customization screens
                 case "dbwfCustom":
                     screen.Child = dbwfCustom;
-                    break;
+                    return dbwfCustom;
                 case "fmCustom":
                     screen.Child = fmCustom;
-                    break;
+                    return fmCustom;
                 case "mogCustom":
                     screen.Child = mogCustom;
-                    break;
+                    return mogCustom;
                 case "vsCustom":
                     screen.Child = vsCustom;
-                    break;
+                    return vsCustom;
 
                 //Drink customization screens
                 case "aajCustom":
                     screen.Child = aajCustom;
-                    break;
+                    return aajCustom;
                 case "ccCustom":
                     screen.Child = ccCustom;
-                    break;
+                    return ccCustom;
                 case "mmCustom":
                     screen.Child = mmCustom;
-                    break;
+                    return mmCustom;
                 case "ssodaCustom":
                     screen.Child = ssodaCustom;
-                    break;
+                    return ssodaCustom;
                 case "wwCustom":
                     screen.Child = wwCustom;
-                    break;
+                    return wwCustom;
+                default:
+                    return null;
 
             }
         }

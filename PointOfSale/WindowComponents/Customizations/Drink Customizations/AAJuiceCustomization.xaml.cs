@@ -30,7 +30,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
-            this.DataContext = new AretinoAppleJuice();
         }
 
         void DoneClickHandle(object sender, EventArgs e)

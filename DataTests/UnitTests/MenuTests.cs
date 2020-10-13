@@ -1,4 +1,10 @@
-﻿using Xunit;
+﻿/*
+ * Author: Hannah Chorn
+ * Class: MenuTests.cs
+ * Purpose: Test the Menu.cs class in the Data library
+ */
+
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Text;

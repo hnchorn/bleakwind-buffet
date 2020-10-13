@@ -4,14 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:local2="clr-namespace:BleakwindBuffet.Data.Enums;assembly=BleakwindBuffet.Data"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1500">
+
+    <UserControl.Resources>
+
+        <ObjectDataProvider x:Key="size" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local2:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="flavor" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local2:SodaFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
     <DockPanel>
         <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="0,4,0,10">
             <Grid>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="180"/>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="75"/>
@@ -22,91 +52,44 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="110"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
 
-                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.ColumnSpan="3">
-                    <TextBlock DockPanel.Dock="Top" Grid.ColumnSpan ="3" FontWeight="Bold" FontSize="20" TextAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.ColumnSpan="6">
+                    <TextBlock DockPanel.Dock="Top" Grid.ColumnSpan ="6" FontWeight="Bold" FontSize="20" TextAlignment="Center">
                         Customize:
                     </TextBlock>
                 </Border>
 
-                <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan ="2" VerticalAlignment="Bottom" FontSize="40" FontWeight="Bold">
+                <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan ="3" VerticalAlignment="Bottom" FontSize="40" FontWeight="Bold">
                     Sailor Soda
                 </TextBlock>
 
-                <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" FontSize="30" FontWeight="Bold">
+                <TextBlock Grid.Row="4" Grid.Column="1" FontSize="30" FontWeight="Bold">
                     Size:
                 </TextBlock>
 
-                <StackPanel Grid.Column="1" Grid.Row="5" Grid.RowSpan="3">
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="ssSize" IsChecked="True">
-                            Small
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="ssSize">
-                            Medium
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="ssSize">
-                            Large
-                        </RadioButton>
-                    </Viewbox>
-                </StackPanel>
+                <ListBox Grid.Row="5" FontSize="25" Grid.Column="1" ItemsSource="{Binding Source={StaticResource size}}" SelectedItem="{Binding Path=Size}"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="2" VerticalAlignment="Bottom" FontSize="30" FontWeight="Bold">
+                <TextBlock Grid.Row="4" Grid.Column="3" FontSize="30" FontWeight="Bold">
                     Flavor:
                 </TextBlock>
 
-                <StackPanel Grid.Column="2" Grid.Row="5" Grid.RowSpan="4">
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor">
-                            Blackberry
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor" IsChecked="True">
-                            Cherry
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor">
-                            Grapefruit
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor">
-                            Lemon
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor">
-                            Peach
-                        </RadioButton>
-                    </Viewbox>
-                    <Viewbox Height="30" HorizontalAlignment="Left">
-                        <RadioButton GroupName="Flavor">
-                            Watermelon
-                        </RadioButton>
-                    </Viewbox>
-                </StackPanel>
+                <ListBox Grid.Row="5" FontSize="25" Grid.Column="3" Grid.RowSpan="3" ItemsSource="{Binding Source={StaticResource flavor}}" SelectedItem="{Binding Path=Flavor}"/>
 
-                <CheckBox IsChecked="True" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Ice}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Ice
                 </CheckBox>
 
-                <Button Click="DoneClickHandle" Name="doneButton" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" FontSize="15">
+                <Button Click="DoneClickHandle" Name="doneButton" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" FontSize="30">
                     Done
                 </Button>
 

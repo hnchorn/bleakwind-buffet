@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 
 namespace PointOfSale
@@ -38,7 +39,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
-            this.DataContext = new BriarheartBurger();
         }
 
         void DoneClickHandle(object sender, EventArgs e)
@@ -46,6 +46,6 @@ namespace PointOfSale
             this.mainWindow.SwitchScreen("menuSelect");
         }
 
-        
+
     }
 }

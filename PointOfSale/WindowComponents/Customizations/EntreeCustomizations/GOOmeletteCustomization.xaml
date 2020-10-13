@@ -40,25 +40,25 @@
                     Garden Orc Omelette
                 </TextBlock>
 
-                <CheckBox IsChecked="True" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Cheddar}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Cheddar
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Broccoli}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Broccoli
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Mushrooms}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Mushrooms
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Tomato}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>

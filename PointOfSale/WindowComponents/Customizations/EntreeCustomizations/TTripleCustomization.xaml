@@ -45,61 +45,61 @@
                     Thalmor Triple
                 </TextBlock>
 
-                <CheckBox IsChecked="True" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Bun}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Bun
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Ketchup}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Ketchup
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Mustard}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Mustard
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Mayo}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Mayo
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Cheese
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Lettuce}" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Lettuce
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Tomato}" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Tomato
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Pickle}" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Pickle
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Bacon}" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Bacon
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Egg}" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>

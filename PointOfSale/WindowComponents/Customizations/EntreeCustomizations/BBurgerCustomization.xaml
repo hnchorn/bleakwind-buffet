@@ -39,31 +39,31 @@
                     Briarheart Burger
                 </TextBlock>
 
-                <CheckBox IsChecked="True" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Bun}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Bun
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Ketchup}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Ketchup
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Mustard}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Mustard
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Cheese
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Pickle}" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>

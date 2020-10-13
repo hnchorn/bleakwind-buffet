@@ -37,7 +37,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
-            this.DataContext = new DoubleDraugr();
         }
         void DoneClickHandle(object sender, EventArgs e)
         {

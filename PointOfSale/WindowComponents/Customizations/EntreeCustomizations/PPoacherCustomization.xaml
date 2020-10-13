@@ -38,19 +38,19 @@
                     Philly Poacher
                 </TextBlock>
 
-                <CheckBox IsChecked="True" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Roll}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Roll
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Sirloin}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Sirloin
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Onion}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>

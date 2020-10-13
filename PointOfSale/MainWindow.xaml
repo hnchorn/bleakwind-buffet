@@ -16,7 +16,6 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition/>
-                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,5" FontSize="50" FontWeight="Bold">
@@ -24,8 +23,7 @@
                 </TextBlock>
 
                 <Border Name ="screen" Grid.Row="1" Grid.RowSpan="2" Padding="0,0,2.5,0"/>
-                <local:OrderSummary Grid.Row="1" Grid.Column="1" Padding="2.5,0,0,2.5"/>
-                <local:TotalSummary Grid.Row="2" Grid.Column="1" Padding="2.5,2.5,0,0"/>
+                <Border Name="orderScreen" Grid.Row="1" Grid.Column="1" Padding="2.5,0,0,2.5"/> 
 
             </Grid>
         </Border>

@@ -39,25 +39,25 @@
                     Smokehouse Skeleton
                 </TextBlock>
 
-                <CheckBox IsChecked="True" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=SausageLink}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Sausage Link
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Egg}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Eggs
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=HashBrowns}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
                     Hashbrowns
                 </CheckBox>
-                <CheckBox IsChecked="True" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Pancake}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2" ScaleY="2"/>
                     </CheckBox.LayoutTransform>
