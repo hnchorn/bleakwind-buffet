@@ -117,8 +117,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             WarriorWater ww = new WarriorWater();
             ww.Ice = includeIce;
             ww.Lemon = includeLemon;
-            if (!includeIce) Assert.Contains("Hold ice", ww.SpecialInstructions);
-            else if (includeLemon) Assert.Contains("Add lemon", ww.SpecialInstructions);
+            if (!includeIce) Assert.Contains(" - Hold ice", ww.SpecialInstructions);
+            else if (includeLemon) Assert.Contains(" - Add lemon", ww.SpecialInstructions);
             else Assert.Empty(ww.SpecialInstructions);
         }
 

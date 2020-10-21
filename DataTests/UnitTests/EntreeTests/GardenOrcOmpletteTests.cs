@@ -134,10 +134,10 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             goo.Mushrooms = includeMushrooms;
             goo.Tomato = includeTomato;
             goo.Cheddar = includeCheddar;
-            if (!includeBroccoli) Assert.Contains("Hold broccoli", goo.SpecialInstructions);
-            else if (!includeMushrooms) Assert.Contains("Hold mushrooms", goo.SpecialInstructions);
-            else if (!includeTomato) Assert.Contains("Hold tomato", goo.SpecialInstructions);
-            else if (!includeCheddar) Assert.Contains("Hold cheddar", goo.SpecialInstructions);
+            if (!includeBroccoli) Assert.Contains(" - Hold broccoli", goo.SpecialInstructions);
+            else if (!includeMushrooms) Assert.Contains(" - Hold mushrooms", goo.SpecialInstructions);
+            else if (!includeTomato) Assert.Contains(" - Hold tomato", goo.SpecialInstructions);
+            else if (!includeCheddar) Assert.Contains(" - Hold cheddar", goo.SpecialInstructions);
             else Assert.Empty(goo.SpecialInstructions);
         }
 

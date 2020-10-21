@@ -63,12 +63,12 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NewOrderClickHandle(object sender, RoutedEventArgs e)
+        private void CompleteOrderClickHandle(object sender, RoutedEventArgs e)
         {
-            if (mainWindow.DataContext is Order order)
+            mainWindow.SwitchScreen("paymentOptions");
+            if(mainWindow.DataContext is Order order)
             {
-                mainWindow.DataContext = new Order();
-                mainWindow.SwitchScreen("menuSelect");
+                PaymentOptions payment = new PaymentOptions(mainWindow, order.Total);
             }
         }
 
@@ -87,99 +87,106 @@ namespace PointOfSale
         }
 
 
-        //public event System.Windows.Controls.SelectionChangedEventHandler SelectionChanged;
-
         public void SelectionChangedHandler(object sender, SelectionChangedEventArgs args)
         {
             if(sender is ListBox lb)
             {
-                IOrderItem item = (IOrderItem)lb.SelectedItem;
-                if(item is Entree)
+                if(lb.SelectedItem is IOrderItem item)
                 {
-                    if(item is BriarheartBurger)
+                    if (item is Entree)
                     {
-                        var screen = this.mainWindow.SwitchScreen("bbCustom");
-                        screen.DataContext = item;
+                        if (item is BriarheartBurger)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("bbCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is DoubleDraugr)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ddCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is ThalmorTriple)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ttCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is GardenOrcOmelette)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("gooCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is PhillyPoacher)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ppCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is SmokehouseSkeleton)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ssCustom");
+                            screen.DataContext = item;
+                        }
                     }
-                    if (item is DoubleDraugr)
+                    if (item is Side)
                     {
-                        var screen = this.mainWindow.SwitchScreen("ddCustom");
-                        screen.DataContext = item;
+                        if (item is DragonbornWaffleFries)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("dbwfCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is FriedMiraak)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("fmCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is MadOtarGrits)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("mogCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is VokunSalad)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("vsCustom");
+                            screen.DataContext = item;
+                        }
                     }
-                    if (item is ThalmorTriple)
+                    if (item is Drink)
                     {
-                        var screen = this.mainWindow.SwitchScreen("ttCustom");
-                        screen.DataContext = item;
+                        if (item is AretinoAppleJuice)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("aajCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is CandlehearthCoffee)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ccCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is MarkarthMilk)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("mmCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is SailorSoda)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("ssodaCustom");
+                            screen.DataContext = item;
+                        }
+                        if (item is WarriorWater)
+                        {
+                            var screen = this.mainWindow.SwitchScreen("wwCustom");
+                            screen.DataContext = item;
+                        }
                     }
-                    if (item is GardenOrcOmelette)
+                    if(item is Combo combo)
                     {
-                        var screen = this.mainWindow.SwitchScreen("gooCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is PhillyPoacher)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("ppCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is SmokehouseSkeleton)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("ssCustom");
-                        screen.DataContext = item;
-                    }
-                }
-                if(item is Side)
-                {
-                    if(item is DragonbornWaffleFries)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("dbwfCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is FriedMiraak)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("fmCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is MadOtarGrits)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("mogCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is VokunSalad)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("vsCustom");
-                        screen.DataContext = item;
-                    }
-                }
-                if(item is Drink)
-                {
-                    if (item is AretinoAppleJuice)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("aajCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is CandlehearthCoffee)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("ccCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is MarkarthMilk)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("mmCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is SailorSoda)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("ssodaCustom");
-                        screen.DataContext = item;
-                    }
-                    if (item is WarriorWater)
-                    {
-                        var screen = this.mainWindow.SwitchScreen("wwCustom");
+                        var screen = this.mainWindow.SwitchScreen("comboCustom");
                         screen.DataContext = item;
                     }
                 }
             }
         }
+
+
 
     }
 }

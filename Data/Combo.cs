@@ -17,6 +17,7 @@ namespace BleakwindBuffet.Data
 {
     public class Combo : IOrderItem, INotifyPropertyChanged
     {
+
         /// <summary>
         /// Constructor for the Combo class. 
         /// </summary>
@@ -63,6 +64,7 @@ namespace BleakwindBuffet.Data
                 }
                 entree = value;
                 entree.PropertyChanged += PropertyChangedListener;
+                NotifyPropertyChanged("Combo");
                 NotifyPropertyChanged("Entree");
                 NotifyPropertyChanged("Price");
                 NotifyPropertyChanged("Calories");
@@ -162,6 +164,15 @@ namespace BleakwindBuffet.Data
                 instructions.AddRange(Drink.SpecialInstructions);
                 return instructions;
             }
+        }
+
+        /// <summary>
+        /// Overrides the ToString function to return item name.
+        /// </summary>
+        /// <returns> "Combo" </returns>
+        public override string ToString()
+        {
+            return "Combo";
         }
 
         /// <summary>

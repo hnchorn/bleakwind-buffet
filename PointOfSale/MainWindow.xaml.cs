@@ -31,6 +31,10 @@ namespace PointOfSale
 
         MenuSelect menuSelect;
         OrderSummary orderSummary;
+        PaymentOptions paymentOptions;
+        CashRegister cashRegister;
+
+        ComboCustomization comboCustom;
 
         //Entrees
         BBurgerCustomization bbCustom;
@@ -64,6 +68,10 @@ namespace PointOfSale
 
             menuSelect = new MenuSelect(this);
             orderSummary = new OrderSummary(this);
+            paymentOptions = new PaymentOptions(this, 0);
+            cashRegister = new CashRegister(this);
+
+            comboCustom = new ComboCustomization(this);
 
             //Entrees
             bbCustom = new BBurgerCustomization(this);
@@ -105,6 +113,20 @@ namespace PointOfSale
                 case "menuSelect":
                     screen.Child = menuSelect;
                     return menuSelect;
+
+                //Payment Option screen
+                case "paymentOptions":
+                    screen.Child = paymentOptions;
+                    return paymentOptions;
+                //Cash Payment screen
+                case "cashRegister":
+                    screen.Child = cashRegister;
+                    return cashRegister;
+
+                //Combo customization screen
+                case "comboCustom":
+                    screen.Child = comboCustom;
+                    return comboCustom;
 
                 //Entree customization screens
                 case "bbCustom":

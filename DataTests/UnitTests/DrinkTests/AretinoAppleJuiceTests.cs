@@ -105,7 +105,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             AretinoAppleJuice aaj = new AretinoAppleJuice();
             aaj.Ice = includeIce;
-            if (includeIce) Assert.Contains("Add ice", aaj.SpecialInstructions);
+            if (includeIce) Assert.Contains(" - Add ice", aaj.SpecialInstructions);
             else Assert.Empty(aaj.SpecialInstructions);
         }
 

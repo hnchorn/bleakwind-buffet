@@ -247,16 +247,16 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Bun) instructions.Add("Hold bun");
-                if (!Ketchup) instructions.Add("Hold ketchup");
-                if (!Mustard) instructions.Add("Hold mustard");
-                if (!Mayo) instructions.Add("Hold mayo");
-                if (!Pickle) instructions.Add("Hold pickle");
-                if (!Tomato) instructions.Add("Hold tomato");
-                if (!Lettuce) instructions.Add("Hold lettuce");
-                if (!Cheese) instructions.Add("Hold cheese");
-                if (!Bacon) instructions.Add("Hold bacon");
-                if (!Egg) instructions.Add("Hold egg");
+                if (!Bun) instructions.Add(" - Hold bun");
+                if (!Ketchup) instructions.Add(" - Hold ketchup");
+                if (!Mustard) instructions.Add(" - Hold mustard");
+                if (!Mayo) instructions.Add(" - Hold mayo");
+                if (!Pickle) instructions.Add(" - Hold pickle");
+                if (!Tomato) instructions.Add(" - Hold tomato");
+                if (!Lettuce) instructions.Add(" - Hold lettuce");
+                if (!Cheese) instructions.Add(" - Hold cheese");
+                if (!Bacon) instructions.Add(" - Hold bacon");
+                if (!Egg) instructions.Add(" - Hold egg");
                 return instructions;
             }
         }

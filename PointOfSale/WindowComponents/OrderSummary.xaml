@@ -12,7 +12,7 @@
         <Border BorderThickness="2" BorderBrush="Black" CornerRadius="5" Padding="0,4,0,0">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="30"/>
                     <RowDefinition/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -23,24 +23,25 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="100"/>
+
                 </Grid.ColumnDefinitions>
                 <Border BorderThickness="0,0,0,1" BorderBrush="Black" Padding="3,0,0,0" Grid.ColumnSpan="3">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock FontSize="30" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center">
                             Order #
                         </TextBlock>
-                        <TextBlock Margin="0 0 0 3" Text="{Binding Path=Number}" FontSize="30" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Margin="0 0 0 3" Text="{Binding Path=Number}" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"/>
                     </StackPanel>
                     
                 </Border>
 
-                <ListBox IsSynchronizedWithCurrentItem="true" SelectionChanged="SelectionChangedHandler" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding}">
+                <ListBox BorderBrush="Transparent" IsSynchronizedWithCurrentItem="true" SelectionChanged="SelectionChangedHandler" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" Grid.ColumnSpan="3">
+                            <StackPanel Orientation="Vertical" Grid.ColumnSpan="2">
                                 <TextBlock Text="{Binding}"  FontSize="20"/>
-                                <ListBox ItemsSource="{Binding Path=SpecialInstructions}" FontSize="15"/>
-                                <TextBlock Text="{Binding Path=Price}" FontSize ="15"  HorizontalAlignment="Right"/>
+                                <TextBlock Text="{Binding Path=Price, StringFormat=c}" FontSize ="15" Grid.Column="2" HorizontalAlignment="Right"/>
+                                <ListBox BorderBrush="Transparent" ItemsSource="{Binding Path=SpecialInstructions}" FontSize="15"/>
                                 <Button Click="RemoveButtonClickHandle" FontSize="20">
                                     Remove
                                 </Button>
@@ -49,30 +50,31 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
 
+
                 <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" BorderThickness="0,2,0,0" BorderBrush="Black"/>
                 <TextBlock Grid.Column="0" Grid.Row="2" FontSize="30" VerticalAlignment="Center">
                     Subtotal:
                 </TextBlock>
-                <TextBlock Text="{Binding Path=Subtotal}" Grid.Column="2" Grid.Row="2" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}" Grid.Column="2" Grid.Row="2" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
                 <TextBlock Grid.Column="0" Grid.Row="3" FontSize="30" VerticalAlignment="Center">
                     Tax:
                 </TextBlock>
-                <TextBlock Text="{Binding Path=Tax}" Grid.Column="2" Grid.Row="3" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding Path=Tax, StringFormat=c}" Grid.Column="2" Grid.Row="3" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
                 <Border Grid.Column="0" Grid.Row="4" BorderThickness="0,2,0,0" BorderBrush="Black">
                     <TextBlock Grid.Column="0" Grid.Row="4" FontSize="30" FontWeight="DemiBold" VerticalAlignment="Center">
                         Total:
                     </TextBlock>
                 </Border>
-                <TextBlock Text="{Binding Path=Total}" Grid.Column="2" Grid.Row="4" FontWeight="Bold" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding Path=Total, StringFormat=c}" Grid.Column="2" Grid.Row="4" FontWeight="Bold" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                 <Border Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" BorderThickness="0,2,0,0" BorderBrush="Black"/>
 
-                <Button Click="CancelOrderClickHandle" Grid.Row="6" FontSize="30" FontWeight="Bold" Margin="5">
+                <Button Click="CancelOrderClickHandle" Grid.Row="6" FontSize="25" FontWeight="Bold" Margin="5">
                     Cancel
                 </Button>
-                <Button Click="NewOrderClickHandle" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" Margin="5">
-                    New Order
+                <Button Click="CompleteOrderClickHandle" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="25" FontWeight="Bold" Margin="5">
+                    Complete Order
                 </Button>
                 
             </Grid>

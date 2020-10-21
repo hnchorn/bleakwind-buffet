@@ -235,10 +235,10 @@ namespace BleakwindBuffet.DataTests.UnitTests
             drink.Lemon = true;
             Combo combo = new Combo(entree, side, drink);
             Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals("Briarheart Burger"); });
-            Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals("Hold ketchup"); });
+            Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals(" - Hold ketchup"); });
             Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals("Small Dragonborn Waffle Fries"); });
             Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals("Small Warrior Water"); });
-            Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals("Add lemon"); });
+            Assert.Contains(combo.SpecialInstructions, (item) => { return item.ToString().Equals(" - Add lemon"); });
         }
 
 

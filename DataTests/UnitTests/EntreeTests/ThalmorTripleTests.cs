@@ -250,16 +250,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             tt.Mayo = includeMayo;
             tt.Bacon = includeBacon;
             tt.Egg = includeEgg;
-            if (!includeBun) Assert.Contains("Hold bun", tt.SpecialInstructions);
-            else if (!includeKetchup) Assert.Contains("Hold ketchup", tt.SpecialInstructions);
-            else if (!includeMustard) Assert.Contains("Hold mustard", tt.SpecialInstructions);
-            else if (!includePickle) Assert.Contains("Hold pickle", tt.SpecialInstructions);
-            else if (!includeCheese) Assert.Contains("Hold cheese", tt.SpecialInstructions);
-            else if (!includeTomato) Assert.Contains("Hold tomato", tt.SpecialInstructions);
-            else if (!includeLettuce) Assert.Contains("Hold lettuce", tt.SpecialInstructions);
-            else if (!includeMayo) Assert.Contains("Hold mayo", tt.SpecialInstructions);
-            else if (!includeBacon) Assert.Contains("Hold bacon", tt.SpecialInstructions);
-            else if (!includeEgg) Assert.Contains("Hold egg", tt.SpecialInstructions);
+            if (!includeBun) Assert.Contains(" - Hold bun", tt.SpecialInstructions);
+            else if (!includeKetchup) Assert.Contains(" - Hold ketchup", tt.SpecialInstructions);
+            else if (!includeMustard) Assert.Contains(" - Hold mustard", tt.SpecialInstructions);
+            else if (!includePickle) Assert.Contains(" - Hold pickle", tt.SpecialInstructions);
+            else if (!includeCheese) Assert.Contains(" - Hold cheese", tt.SpecialInstructions);
+            else if (!includeTomato) Assert.Contains(" - Hold tomato", tt.SpecialInstructions);
+            else if (!includeLettuce) Assert.Contains(" - Hold lettuce", tt.SpecialInstructions);
+            else if (!includeMayo) Assert.Contains(" - Hold mayo", tt.SpecialInstructions);
+            else if (!includeBacon) Assert.Contains(" - Hold bacon", tt.SpecialInstructions);
+            else if (!includeEgg) Assert.Contains(" - Hold egg", tt.SpecialInstructions);
             else Assert.Empty(tt.SpecialInstructions);
         }
 

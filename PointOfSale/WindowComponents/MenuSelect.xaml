@@ -9,7 +9,6 @@
     <DockPanel>
         <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="0,4,0,10">
             <Grid>
-                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -123,6 +122,11 @@
                 <Border Grid.Column="2" Grid.Row="6" Padding="10,5" CornerRadius="10">
                     <Button Click="WwClickHandle" Grid.Row="2" Name="wwButton" FontSize="30">
                         Warrior Water
+                    </Button>
+                </Border>
+                <Border Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="100, 80, 100, 20" Padding="10,5" CornerRadius="10">
+                    <Button Click="ComboClickHandle" Grid.Row="8" Name="comboButton" FontSize="30">
+                        Combo
                     </Button>
                 </Border>
 

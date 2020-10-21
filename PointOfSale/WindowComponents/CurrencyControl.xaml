@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PointOfSale.CurrencyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="Increment" Grid.Column="1" Click="HandleButtonClick">
+            <Button.Content>
+                <TextBlock FontSize="60" VerticalAlignment="Center">
+                    +
+                </TextBlock>
+            </Button.Content>
+        </Button>
+        
+        <TextBox Grid.Column="2" FontSize="50" TextAlignment="Center" Text="{Binding Path=CustomerQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
+        
+        <Button Name="Decrement" Grid.Column="3" Click="HandleButtonClick">
+            <Button.Content>
+                <TextBlock FontSize="60" VerticalAlignment="Center">
+                    -
+                </TextBlock>
+            </Button.Content>
+        </Button>
+
+        <Border Grid.Column="0">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="{Binding Path=Label, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
+        </Border>
+
+        <Border Grid.Column="5" BorderBrush="Black" BorderThickness="3" Margin="5, 2">
+            <TextBox TextAlignment="Center" FontSize="50" Text="{Binding Path=ChangeQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
+        </Border>
+
+    </Grid>
+</UserControl>

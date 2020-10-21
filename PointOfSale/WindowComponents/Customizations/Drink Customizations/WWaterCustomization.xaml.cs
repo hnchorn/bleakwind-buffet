@@ -5,9 +5,11 @@
  * customization screen on the GUI interface.
  */
 
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,7 +43,19 @@ namespace PointOfSale
 
         void DoneClickHandle(object sender, EventArgs e)
         {
-            this.mainWindow.SwitchScreen("menuSelect");
+            if (mainWindow.DataContext is Order order)
+            {
+                IOrderItem item = order.Last();
+                if (item is Combo)
+                {
+
+                    this.mainWindow.SwitchScreen("comboCustom");
+                }
+                else
+                {
+                    this.mainWindow.SwitchScreen("menuSelect");
+                }
+            }
         }
     }
 }

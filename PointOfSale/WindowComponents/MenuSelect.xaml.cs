@@ -41,8 +41,21 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
-            BriarheartBurger bb = new BriarheartBurger();
 
+        }
+
+        void ComboClickHandle(object sender, EventArgs e)
+        {
+            var screen = this.mainWindow.SwitchScreen("comboCustom");
+            BriarheartBurger bb = new BriarheartBurger();
+            DragonbornWaffleFries dbwf = new DragonbornWaffleFries();
+            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            Combo combo = new Combo(bb, dbwf, aaj);
+            screen.DataContext = combo;
+            if (mainWindow.DataContext is Order order)
+            {
+                order.Add(combo);
+            }
         }
 
         //Entree click handles

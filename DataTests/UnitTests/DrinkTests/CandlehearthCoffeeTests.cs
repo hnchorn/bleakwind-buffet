@@ -140,8 +140,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             CandlehearthCoffee cc = new CandlehearthCoffee();
             cc.Ice = includeIce;
             cc.RoomForCream = includeCream;
-            if (includeIce) Assert.Contains("Add ice", cc.SpecialInstructions);
-            else if (includeCream) Assert.Contains("Add cream", cc.SpecialInstructions);
+            if (includeIce) Assert.Contains(" - Add ice", cc.SpecialInstructions);
+            else if (includeCream) Assert.Contains(" - Add cream", cc.SpecialInstructions);
             else Assert.Empty(cc.SpecialInstructions);
         }
 
