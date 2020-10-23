@@ -37,8 +37,8 @@
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="{Binding Path=Label, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
         </Border>
 
-        <Border Grid.Column="5" BorderBrush="Black" BorderThickness="3" Margin="5, 2">
-            <TextBox TextAlignment="Center" FontSize="50" Text="{Binding Path=ChangeQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
+        <Border Name="ChangeBorder" Grid.Column="5" BorderBrush="Black" BorderThickness="3" Margin="5, 2">
+            <TextBox Name ="Change"  TextAlignment="Center" FontSize="50" Text="{Binding Path=ChangeQuantity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:CurrencyControl}}"/>
         </Border>
 
     </Grid>

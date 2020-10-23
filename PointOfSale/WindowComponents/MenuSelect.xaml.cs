@@ -44,6 +44,7 @@ namespace PointOfSale
 
         }
 
+        //Combo click handle
         void ComboClickHandle(object sender, EventArgs e)
         {
             var screen = this.mainWindow.SwitchScreen("comboCustom");

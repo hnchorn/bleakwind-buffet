@@ -25,6 +25,7 @@ namespace BleakwindBuffet.Data
         public Order()
         {
             CollectionChanged += CollectionChangedListener;
+            Number = nextOrderNumber++;
         }
 
         private static int nextOrderNumber = 1;
@@ -33,10 +34,7 @@ namespace BleakwindBuffet.Data
         /// </summary>
         public int Number
         {
-            get
-            {
-                return nextOrderNumber++;
-            }
+            get; private set;
         }
        
         /// <summary>

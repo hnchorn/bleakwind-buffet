@@ -41,11 +41,7 @@ namespace PointOfSale
             this.mainWindow = mainWindow;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Click handle for the Cancel Button.
         private void CancelOrderClickHandle(object sender, RoutedEventArgs e)
         {
             if (mainWindow.DataContext is Order order)
@@ -58,20 +54,17 @@ namespace PointOfSale
             }
         }
 
-        /// <summary>
-        /// Click Handle 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //Click handle for the Complete Order Button.
         private void CompleteOrderClickHandle(object sender, RoutedEventArgs e)
         {
             mainWindow.SwitchScreen("paymentOptions");
             if(mainWindow.DataContext is Order order)
             {
-                PaymentOptions payment = new PaymentOptions(mainWindow, order.Total);
+                PaymentOptions payment = new PaymentOptions(mainWindow);
             }
         }
 
+        //Click handle for the Remove Button.
         private void RemoveButtonClickHandle(object sender, RoutedEventArgs e)
         {
             if (mainWindow.DataContext is Order order)
@@ -86,7 +79,7 @@ namespace PointOfSale
             }
         }
 
-
+        //Handle for when the item selected in a listbox changes.
         public void SelectionChangedHandler(object sender, SelectionChangedEventArgs args)
         {
             if(sender is ListBox lb)

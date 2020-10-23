@@ -1,4 +1,11 @@
-﻿using BleakwindBuffet.Data;
+﻿/*
+ * Author: Hannah Chorn
+ * Class name: PaymentOptions.xaml.cs
+ * Purpose: Class used to represent the payment selection screen on the 
+ * GUI interface.
+ */
+
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
@@ -26,12 +33,18 @@ namespace PointOfSale
     {
         MainWindow mainWindow;
 
-        public PaymentOptions(MainWindow mainWindow, double total)
+        /// <summary>
+        /// Initializes the PaymentOptions screen and sets its parent
+        /// as the MainWindow screen.
+        /// </summary>
+        /// <param name="mainWindow">Parent screen.</param>
+        public PaymentOptions(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
         }
 
+        //Click handle for when the Cash payment option is clicked.
         void CashClickHandle(object sender, EventArgs e)
         {
             var screen = this.mainWindow.SwitchScreen("cashRegister");
@@ -42,7 +55,7 @@ namespace PointOfSale
             }
         }
 
-
+        //Click handle for when the Card paymention option is clicked.
         void DebitCreditClickHandle(object sender, EventArgs e)
         {
             if (mainWindow.DataContext is Order order)
@@ -50,8 +63,26 @@ namespace PointOfSale
                 CardTransactionResult transactionResult = CardReader.RunCard(order.Total);
                 if (transactionResult == CardTransactionResult.Approved)
                 {
-                    string paymentType = "Card";
-                    PrintReciept(paymentType);
+                    RecieptPrinter.PrintLine(DateTime.Now.ToString("MM/dd/yyyy HH:mm"));
+                    RecieptPrinter.PrintLine(" ");
+                    RecieptPrinter.PrintLine("Order #" + order.Number.ToString());
+                    RecieptPrinter.PrintLine(" ");
+                    foreach (IOrderItem item in order)
+                    {
+                        RecieptPrinter.PrintLine(item.ToString());
+                        foreach (String instruction in item.SpecialInstructions)
+                        {
+                            RecieptPrinter.PrintLine(instruction);
+                        }
+                    }
+                    RecieptPrinter.PrintLine(" ");
+                    RecieptPrinter.PrintLine("Subtotal: $" + order.Subtotal.ToString());
+                    RecieptPrinter.PrintLine("Tax: $" + order.Tax.ToString());
+                    RecieptPrinter.PrintLine("Total: $" + order.Total.ToString());
+                    RecieptPrinter.PrintLine(" ");
+                    RecieptPrinter.PrintLine("Payment Method: Card");
+                    RecieptPrinter.CutTape();
+
                     var result = MessageBox.Show("Card Approved!", "Card Approved");
                     if (result == MessageBoxResult.OK)
                     {
@@ -79,37 +110,7 @@ namespace PointOfSale
             }
         }
 
-        void PrintReciept(string paymentType)
-        {
-            if (mainWindow.DataContext is Order order)
-            {
-                RecieptPrinter.PrintLine(DateTime.Now.ToString("MM/dd/yyyy HH:mm"));
-                RecieptPrinter.PrintLine(" ");
-                RecieptPrinter.PrintLine("Order #" + order.Number.ToString());
-                RecieptPrinter.PrintLine(" ");
-                foreach (IOrderItem item in order)
-                {
-                    RecieptPrinter.PrintLine(item.ToString());
-                    foreach(String instruction in item.SpecialInstructions)
-                    {
-                        RecieptPrinter.PrintLine(instruction);
-                    }
-                }
-                RecieptPrinter.PrintLine(" ");
-                RecieptPrinter.PrintLine("Subtotal: $" + order.Subtotal.ToString());
-                RecieptPrinter.PrintLine("Tax: $" + order.Tax.ToString());
-                RecieptPrinter.PrintLine("Total: $" + order.Total.ToString());
-                RecieptPrinter.PrintLine(" ");
-                RecieptPrinter.PrintLine("Payment Method: " + paymentType);
-                if (paymentType == "Cash")
-                {
-                    //RecieptPrinter.PrintLine();
-                }
-                RecieptPrinter.CutTape();
-            }
-        }
-
-
+        //Click handle for when the Return button is clicked
         void ReturnClickHandle(object sender, EventArgs e)
         {
             this.mainWindow.SwitchScreen("menuSelect");

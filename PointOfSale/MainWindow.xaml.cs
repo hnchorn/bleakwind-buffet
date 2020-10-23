@@ -68,7 +68,7 @@ namespace PointOfSale
 
             menuSelect = new MenuSelect(this);
             orderSummary = new OrderSummary(this);
-            paymentOptions = new PaymentOptions(this, 0);
+            paymentOptions = new PaymentOptions(this);
             cashRegister = new CashRegister(this);
 
             comboCustom = new ComboCustomization(this);

@@ -55,7 +55,7 @@
             Return to Order
         </Button>
 
-        <Button Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" Margin="0,40" FontSize="40">
+        <Button Click="FinishClickHandle" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" Margin="0,40" FontSize="40">
             Finish
         </Button>
 

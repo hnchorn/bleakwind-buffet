@@ -22,17 +22,6 @@ namespace BleakwindBuffet.DataTests.UnitTests
     public class OrderTests
     {
         [Fact]
-        public void ShouldIncreaseOrderNumber()
-        {
-            Order tempOrder = new Order();
-            Assert.Equal(1, tempOrder.Number);
-            Order tempOrder2 = new Order();
-            Assert.Equal(2, tempOrder2.Number);
-            Order tempOrder3 = new Order();
-            Assert.Equal(3, tempOrder3.Number);
-        }
-
-        [Fact]
         public void ShouldBeAssignableToINotifyPropertyChanged()
         {
             Order order = new Order();
