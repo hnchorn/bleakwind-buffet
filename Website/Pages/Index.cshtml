@@ -1,0 +1,224 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@using BleakwindBuffet.Data;
+@using BleakwindBuffet.Data.Entrees;
+@using BleakwindBuffet.Data.Sides;
+@using BleakwindBuffet.Data.Drinks;
+@using BleakwindBuffet.Data.Enums;
+
+<div class="text-center">
+    <h1 class="title">Bleakwind Buffet</h1>
+    <p class="description">
+        We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim.
+        Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a
+        Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure
+        and earned your loot, so spend it with us!
+    </p>
+</div>
+
+<p class="combo">Make it a Combo: Combine any one entree, side, and drink and receive a $1 discount!</p>
+
+
+<h2 class="item-type">Entrees</h2>
+<ul class="menu">
+    @foreach (Entree e in Menu.Entrees())
+    {
+        <li>
+            <h5 class="item-name">@e.ToString()</h5>
+            <div class="price">
+                Price: $@e.Price
+            </div>
+            <div class="calories">
+                Calories: @e.Calories
+            </div>
+        </li>
+    }
+</ul>
+
+
+<h2 class="item-type">Sides</h2>
+<h5 class="item-name">Dragonborn Waffle Fries</h5>
+<ul class="menu">
+    @foreach (Side s in Menu.Sides())
+    {
+        if (s is DragonbornWaffleFries)
+        {
+            <li>
+                @s.Size:
+                <div class="price">
+                    Price: $@s.Price
+                </div>
+                <div class="calories">
+                    Calories: @s.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Fried Miraak</h5>
+<ul class="menu">
+    @foreach (Side s in Menu.Sides())
+    {
+        if (s is FriedMiraak)
+        {
+            <li>
+                <div class="item-size">
+                    @s.Size:
+                </div>
+                <div class="price">
+                    Price: $@s.Price
+                </div>
+                <div class="calories">
+                    Calories: @s.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Mad Otar Grits</h5>
+<ul class="menu">
+    @foreach (Side s in Menu.Sides())
+    {
+        if (s is MadOtarGrits)
+        {
+            <li>
+                <div class="item-size">
+                    @s.Size:
+                </div>
+                <div class="price">
+                    Price: $@s.Price
+                </div>
+                <div class="calories">
+                    Calories: @s.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Vokun Salad</h5>
+<ul class="menu">
+    @foreach (Side s in Menu.Sides())
+    {
+        if (s is VokunSalad)
+        {
+            <li>
+                <div class="item-size">
+                    @s.Size:
+                </div>
+                <div class="price">
+                    Price: $@s.Price
+                </div>
+                <div class="calories">
+                    Calories: @s.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+
+
+<h2 class="item-type">Drinks</h2>
+<h5 class="item-name">Aretino Apple Juice</h5>
+<ul class="menu">
+    @foreach (Drink d in Menu.Drinks())
+    {
+        if (d is AretinoAppleJuice)
+        {
+            <li>
+                @d.Size:
+                <div class="price">
+                    Price: $@d.Price
+                </div>
+                <div class="calories">
+                    Calories: @d.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Candlehearth Coffee</h5>
+<ul class="menu">
+    @foreach (Drink d in Menu.Drinks())
+    {
+        if (d is CandlehearthCoffee)
+        {
+            <li>
+                @d.Size:
+                <div class="price">
+                    Price: $@d.Price
+                </div>
+                <div class="calories">
+                    Calories: @d.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Markarth Milk</h5>
+<ul class="menu">
+    @foreach (Drink d in Menu.Drinks())
+    {
+        if (d is MarkarthMilk)
+        {
+            <li>
+                @d.Size:
+                <div class="price">
+                    Price: $@d.Price
+                </div>
+                <div class="calories">
+                    Calories: @d.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+<h5 class="item-name">Sailor Soda</h5>
+<div style="color: darkslategray">
+    Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
+</div>
+<ul class="menu">
+    @foreach (Drink d in Menu.Drinks())
+    {
+        if (d is SailorSoda ss)
+        {
+            if (ss.Flavor is SodaFlavor.Cherry)
+            {
+                <li>
+                    @d.Size:
+                    <div class="price">
+                        Price: $@d.Price
+                    </div>
+                    <div class="calories">
+                        Calories: @d.Calories
+                    </div>
+                </li>
+            }
+        }
+    }
+</ul>
+<h5 class="item-name">Warrior Water</h5>
+<ul class="menu">
+    @foreach (Drink d in Menu.Drinks())
+    {
+        if (d is WarriorWater)
+        {
+            <li>
+                @d.Size:
+                <div class="price">
+                    Price: $@d.Price
+                </div>
+                <div class="calories">
+                    Calories: @d.Calories
+                </div>
+            </li>
+        }
+    }
+</ul>
+
+
+
+

@@ -59,15 +59,24 @@ namespace BleakwindBuffet.Data
                 DragonbornWaffleFries dwf = new DragonbornWaffleFries();
                 dwf.Size = size;
                 list.Add(dwf);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 FriedMiraak fm = new FriedMiraak();
                 fm.Size = size;
                 list.Add(fm);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 MadOtarGrits mog = new MadOtarGrits();
                 mog.Size = size;
                 list.Add(mog);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 VokunSalad vs = new VokunSalad();
                 vs.Size = size;
                 list.Add(vs);
@@ -89,20 +98,32 @@ namespace BleakwindBuffet.Data
                 AretinoAppleJuice aj = new AretinoAppleJuice();
                 aj.Size = size;
                 list.Add(aj);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 CandlehearthCoffee cc = new CandlehearthCoffee();
                 cc.Size = size;
                 list.Add(cc);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 MarkarthMilk mm = new MarkarthMilk();
                 mm.Size = size;
                 list.Add(mm);
+            }
 
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
                 WarriorWater ww = new WarriorWater();
                 ww.Size = size;
                 list.Add(ww);
+            }
 
-                foreach(SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
                 {
                     SailorSoda ss = new SailorSoda();
                     ss.Size = size;
