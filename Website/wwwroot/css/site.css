@@ -10,10 +10,53 @@ for details on configuring this project to bundle and minify static web assets. 
     font-family: TrajanusBricks;
 }
 
+.grid{
+    grid-column-gap: 70px;
+}
+
 .title{
     text-align: center;
     font-size: 4rem;
 }
+
+form#menu-database {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+#search {
+    margin-top: 20px;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+#filters input[type=number] {
+    width: 3rem;
+}
+
+ {
+    padding-bottom: 0;
+    padding-top: 100px;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+}
+
+
 
 ul.menu > li {
     list-style-type: none;

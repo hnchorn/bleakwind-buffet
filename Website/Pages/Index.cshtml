@@ -9,6 +9,7 @@
 @using BleakwindBuffet.Data.Sides;
 @using BleakwindBuffet.Data.Drinks;
 @using BleakwindBuffet.Data.Enums;
+@using System.Linq; 
 
 <div class="text-center">
     <h1 class="title">Bleakwind Buffet</h1>
@@ -22,202 +23,284 @@
 
 <p class="combo">Make it a Combo: Combine any one entree, side, and drink and receive a $1 discount!</p>
 
+<form id="menu-database">
 
-<h2 class="item-type">Entrees</h2>
-<ul class="menu">
-    @foreach (Entree e in Menu.Entrees())
-    {
-        <li>
-            <h5 class="item-name">@e.ToString()</h5>
-            <div class="price">
-                Price: $@e.Price
-            </div>
-            <div class="calories">
-                Calories: @e.Calories
-            </div>
-        </li>
-    }
-</ul>
+    <div id="filters">
+        <h4 style="padding-top: 50px">Type</h4>
+        <label>
+            <input type="checkbox" name="Types" value="entree"/>
+            Entree
+        </label>
+        <label>
+            <input type="checkbox" name="Types" value="side"/>
+            Sides
+        </label>
+        <label>
+            <input type="checkbox" name="Types" value="drink"/>
+            Drinks
+        </label>
 
+        <h4 style="padding-top: 20px">Price</h4>
+        <div>
+            Between
+            <input name="PriceMin" type="number" min="0" max="10" step="0.1" placeholder="min" />
+            and
+            <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" />
+        </div>
 
-<h2 class="item-type">Sides</h2>
-<h5 class="item-name">Dragonborn Waffle Fries</h5>
-<ul class="menu">
-    @foreach (Side s in Menu.Sides())
-    {
-        if (s is DragonbornWaffleFries)
-        {
-            <li>
-                @s.Size:
-                <div class="price">
-                    Price: $@s.Price
-                </div>
-                <div class="calories">
-                    Calories: @s.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
-<h5 class="item-name">Fried Miraak</h5>
-<ul class="menu">
-    @foreach (Side s in Menu.Sides())
-    {
-        if (s is FriedMiraak)
-        {
-            <li>
-                <div class="item-size">
-                    @s.Size:
-                </div>
-                <div class="price">
-                    Price: $@s.Price
-                </div>
-                <div class="calories">
-                    Calories: @s.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
-<h5 class="item-name">Mad Otar Grits</h5>
-<ul class="menu">
-    @foreach (Side s in Menu.Sides())
-    {
-        if (s is MadOtarGrits)
-        {
-            <li>
-                <div class="item-size">
-                    @s.Size:
-                </div>
-                <div class="price">
-                    Price: $@s.Price
-                </div>
-                <div class="calories">
-                    Calories: @s.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
-<h5 class="item-name">Vokun Salad</h5>
-<ul class="menu">
-    @foreach (Side s in Menu.Sides())
-    {
-        if (s is VokunSalad)
-        {
-            <li>
-                <div class="item-size">
-                    @s.Size:
-                </div>
-                <div class="price">
-                    Price: $@s.Price
-                </div>
-                <div class="calories">
-                    Calories: @s.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
+        <h4 style="padding-top: 20px">Calories</h4>
+        <div>
+            Between
+            <input name="CaloriesMin" type="number" min="0" max="1000" step="10" placeholder="min" />
+            and
+            <input name="CaloriesMax" type="number" min="0" max="1000" step="10" placeholder="max" />
+        </div>
 
+        <div id="search" style="padding-top: 20px">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
 
-<h2 class="item-type">Drinks</h2>
-<h5 class="item-name">Aretino Apple Juice</h5>
-<ul class="menu">
-    @foreach (Drink d in Menu.Drinks())
-    {
-        if (d is AretinoAppleJuice)
+    </div>
+
+    <div id="results">
+        @if (Model.Entrees.Count != 0)
         {
-            <li>
-                @d.Size:
-                <div class="price">
-                    Price: $@d.Price
-                </div>
-                <div class="calories">
-                    Calories: @d.Calories
-                </div>
-            </li>
+            <h2 class="item-type">Entrees</h2>
         }
-    }
-</ul>
-<h5 class="item-name">Candlehearth Coffee</h5>
-<ul class="menu">
-    @foreach (Drink d in Menu.Drinks())
-    {
-        if (d is CandlehearthCoffee)
-        {
-            <li>
-                @d.Size:
-                <div class="price">
-                    Price: $@d.Price
-                </div>
-                <div class="calories">
-                    Calories: @d.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
-<h5 class="item-name">Markarth Milk</h5>
-<ul class="menu">
-    @foreach (Drink d in Menu.Drinks())
-    {
-        if (d is MarkarthMilk)
-        {
-            <li>
-                @d.Size:
-                <div class="price">
-                    Price: $@d.Price
-                </div>
-                <div class="calories">
-                    Calories: @d.Calories
-                </div>
-            </li>
-        }
-    }
-</ul>
-<h5 class="item-name">Sailor Soda</h5>
-<div style="color: darkslategray">
-    Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
-</div>
-<ul class="menu">
-    @foreach (Drink d in Menu.Drinks())
-    {
-        if (d is SailorSoda ss)
-        {
-            if (ss.Flavor is SodaFlavor.Cherry)
+        <ul class="menu">
+            @foreach (IOrderItem e in @Model.Entrees)
             {
                 <li>
-                    @d.Size:
+                    <h5 class="item-name">@e.ToString()</h5>
                     <div class="price">
-                        Price: $@d.Price
+                        Price: $@e.Price
                     </div>
                     <div class="calories">
-                        Calories: @d.Calories
+                        Calories: @e.Calories
                     </div>
                 </li>
             }
-        }
-    }
-</ul>
-<h5 class="item-name">Warrior Water</h5>
-<ul class="menu">
-    @foreach (Drink d in Menu.Drinks())
-    {
-        if (d is WarriorWater)
+        </ul>
+
+
+        @if (Model.Sides.Count != 0)
         {
-            <li>
-                @d.Size:
-                <div class="price">
-                    Price: $@d.Price
-                </div>
-                <div class="calories">
-                    Calories: @d.Calories
-                </div>
-            </li>
+            <h2 class="item-type">Sides</h2>
         }
-    }
-</ul>
+        @if (Model.Sides.Exists(item => item is DragonbornWaffleFries))
+        {
+            <h5 class="item-name">Dragonborn Waffle Fries</h5>
+        }
+        <ul class="menu">
+            @foreach (Side s in @Model.Sides)
+            {
+                if (s is DragonbornWaffleFries)
+                {
+                    <li>
+                        @s.Size:
+                        <div class="price">
+                            Price: $@s.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @s.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Sides.Exists(item => item is FriedMiraak))
+        {
+            <h5 class="item-name">Fried Miraak</h5>
+        }
+        <ul class="menu">
+            @foreach (Side s in @Model.Sides)
+            {
+                if (s is FriedMiraak)
+                {
+                    <li>
+                        <div class="item-size">
+                            @s.Size:
+                        </div>
+                        <div class="price">
+                            Price: $@s.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @s.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Sides.Exists(item => item is MadOtarGrits))
+        {
+            <h5 class="item-name">Mad Otar Grits</h5>
+        }
+        <ul class="menu">
+            @foreach (Side s in @Model.Sides)
+            {
+                if (s is MadOtarGrits)
+                {
+                    <li>
+                        <div class="item-size">
+                            @s.Size:
+                        </div>
+                        <div class="price">
+                            Price: $@s.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @s.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Sides.Exists(item => item is VokunSalad))
+        {
+            <h5 class="item-name">Vokun Salad</h5>
+        }
+        <ul class="menu">
+            @foreach (Side s in @Model.Sides)
+            {
+                if (s is VokunSalad)
+                {
+                    <li>
+                        <div class="item-size">
+                            @s.Size:
+                        </div>
+                        <div class="price">
+                            Price: $@s.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @s.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+
+
+        @if (Model.Drinks.Count != 0)
+        {
+            <h2 class="item-type">Drinks</h2>
+        }
+        @if (Model.Drinks.Exists(item => item is AretinoAppleJuice))
+        {
+            <h5 class="item-name">Aretino Apple Juice</h5>
+        }
+        <ul class="menu">
+            @foreach (Drink d in @Model.Drinks)
+            {
+                if (d is AretinoAppleJuice)
+                {
+                    <li>
+                        @d.Size:
+                        <div class="price">
+                            Price: $@d.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @d.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Drinks.Exists(item => item is CandlehearthCoffee))
+        {
+            <h5 class="item-name">Candlehearth Coffee</h5>
+        }
+        <ul class="menu">
+            @foreach (Drink d in @Model.Drinks)
+            {
+                if (d is CandlehearthCoffee)
+                {
+                    <li>
+                        @d.Size:
+                        <div class="price">
+                            Price: $@d.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @d.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Drinks.Exists(item => item is MarkarthMilk))
+        {
+            <h5 class="item-name">Markarth Milk</h5>
+        }
+        <ul class="menu">
+            @foreach (Drink d in @Model.Drinks)
+            {
+                if (d is MarkarthMilk)
+                {
+                    <li>
+                        @d.Size:
+                        <div class="price">
+                            Price: $@d.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @d.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        @if (Model.Drinks.Exists(item => item is SailorSoda))
+        {
+            <h5 class="item-name">Sailor Soda</h5>
+            <div style="color: darkslategray">
+                Flavors: Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
+            </div>
+        }
+        <ul class="menu">
+            @foreach (Drink d in @Model.Drinks)
+            {
+                if (d is SailorSoda ss)
+                {
+                    if (ss.Flavor is SodaFlavor.Cherry)
+                    {
+                        <li>
+                            @d.Size:
+                            <div class="price">
+                                Price: $@d.Price
+                            </div>
+                            <div class="calories">
+                                Calories: @d.Calories
+                            </div>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+        @if (Model.Drinks.Exists(item => item is WarriorWater))
+        {
+            <h5 class="item-name">Warrior Water</h5>
+        }
+        <ul class="menu">
+            @foreach (Drink d in @Model.Drinks)
+            {
+                if (d is WarriorWater)
+                {
+                    <li>
+                        @d.Size:
+                        <div class="price">
+                            Price: $@d.Price
+                        </div>
+                        <div class="calories">
+                            Calories: @d.Calories
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+
+</form>
+
+
+
 
 
 
