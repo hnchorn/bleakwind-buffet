@@ -150,5 +150,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 vs.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void ShouldReturnCorrectDescription()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.Equal("A seasonal fruit salad of mellons, " +
+                "berries, mango, grape, apple, and oranges.", vs.Description);
+        }
     }
 }

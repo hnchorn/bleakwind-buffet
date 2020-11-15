@@ -52,6 +52,17 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Gets the description of the t-bone.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Juicy T-Bone, not much else to say.";
+            }
+        }
+
+        /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>
         /// <returns> "Thugs T-Bone" </returns>

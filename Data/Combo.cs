@@ -166,6 +166,17 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        /// </summary>
+        /// Gets the description of the combo.
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return "Combo order.";
+            }
+        }
+
         /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>

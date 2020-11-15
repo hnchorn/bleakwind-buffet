@@ -63,16 +63,61 @@ namespace Website.Pages
             Entrees = new List<Entree>();
             Sides = new List<Side>();
             Drinks = new List<Drink>();
-
+            
+            //Filters by terms in item name or description
             SearchTerms = Request.Query["SearchTerms"];
-            Items = Menu.Search(Items, SearchTerms);
+            if(SearchTerms != null)
+            {
+                Items = Items.Where(item => item.ToString().Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase) || item.Description.Contains(SearchTerms, StringComparison.InvariantCultureIgnoreCase));
+            }
 
+            //Filters by item type
             Types = Request.Query["Types"];
-            Items = Menu.FilterByCategory(Items, Types);
+            if(Types != null)
+            {
+                if (Types.Contains("entree"))
+                {
+                    Items = Items.Where(item => item is Entree);
+                }
+                if (Types.Contains("side"))
+                {
+                    Items = Items.Where(item => item is Side);
+                }
+                if (Types.Contains("drink"))
+                {
+                    Items = Items.Where(item => item is Drink);
+                }
+            }
 
-            Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
-            Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
+            //Filters by Calories
+            if (CaloriesMin != null && CaloriesMax == null)
+            {
+                Items = Items.Where(item => item.Calories >= CaloriesMin);
+            }
+            if(CaloriesMin == null && CaloriesMax != null)
+            {
+                Items = Items.Where(item => item.Calories <= CaloriesMax);
+            }
+            if(CaloriesMin != null && CaloriesMax != null)
+            {
+                Items = Items.Where(item => item.Calories >= CaloriesMin).Where(item => item.Calories <= CaloriesMax);
+            }
 
+            //Filters by Price
+            if(PriceMin != null && PriceMax == null)
+            {
+                Items = Items.Where(item => item.Price >= PriceMin);
+            }
+            if(PriceMin == null && PriceMax != null)
+            {
+                Items = Items.Where(item => item.Price <= PriceMax);
+            }
+            if (PriceMin != null && PriceMax != null)
+            {
+                Items = Items.Where(item => item.Price >= PriceMin).Where(item => item.Price <= PriceMax);
+            }
+            
+            //Divides items into their respective type lists
             foreach(IOrderItem item in Items)
             {
                 if(item is Entree)

@@ -53,6 +53,11 @@ namespace BleakwindBuffet.Data.Sides
         public abstract uint Calories { get; }
 
         /// <summary>
+        /// The description of the side.
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// Creates and returns a new list since there are no 
         /// special instructions for sides.
         /// </summary>

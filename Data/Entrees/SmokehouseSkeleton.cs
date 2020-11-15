@@ -136,6 +136,17 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <summary>
+        /// Gets the description of the combo.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+            }
+        }
+
+        /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>
         /// <returns> "Smokehouse Skeleton" </returns>

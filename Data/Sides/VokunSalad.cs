@@ -49,6 +49,17 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Gets the description of the salad.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+            }
+        }
+
+        /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>
         /// <returns> "[Size] Vokun Salad" </returns>

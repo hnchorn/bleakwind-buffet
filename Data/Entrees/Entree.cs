@@ -36,6 +36,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// The description of the entree.
+        /// </summary>
+        public abstract string Description { get; }
+
         protected void NotifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

@@ -21,19 +21,21 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Defines the price of an item.
         /// </summary>
-        /// <returns></returns>
         double Price { get; }
 
         /// <summary>
         /// Defines the calories of an item.
         /// </summary>
-        /// <returns></returns>
         uint Calories { get; }
 
         /// <summary>
         /// Defines the special isntructions for an item.
         /// </summary>
-        /// <returns></returns>
         List<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Defines the description of an item.
+        /// </summary>
+        string Description { get; }
     }
 }

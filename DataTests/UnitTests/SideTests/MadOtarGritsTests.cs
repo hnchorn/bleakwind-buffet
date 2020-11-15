@@ -150,5 +150,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
                 mog.Size = Size.Large;
             });
         }
+
+        [Fact]
+        public void ShouldReturnCorrectDescription()
+        {
+            MadOtarGrits mog = new MadOtarGrits();
+            Assert.Equal("Cheesey Grits.", mog.Description);
+        }
     }
 }

@@ -93,6 +93,17 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// </summary>
+        /// Gets the description of the water.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "It’s water. Just water.";
+            }
+        }
+
         /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>

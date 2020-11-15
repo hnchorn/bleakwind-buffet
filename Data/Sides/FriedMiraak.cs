@@ -49,6 +49,17 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Gets the description of the pancakes.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Perfectly prepared hash brown pancakes.";
+            }
+        }
+
+        /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>
         /// <returns> "[Size] Fried Miraak" </returns>

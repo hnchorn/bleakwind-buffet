@@ -49,6 +49,17 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Gets the description of the grits.
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return "Cheesey Grits.";
+            }
+        }
+
+        /// <summary>
         /// Overrides the ToString function to return item name.
         /// </summary>
         /// <returns> "[Size] Mad Otar Grits" </returns>
